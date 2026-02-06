@@ -1,0 +1,126 @@
+.header {
+  height: 200px;
+  width: 100%;
+}
+
+.header-container {
+  max-width: 1840px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Logo central absoluta */
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  width: 197px;
+}
+
+/* Botões laterais */
+.menu-btn {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+
+  width: 143px;
+  height: 43px;
+
+  background-image: url("/buttons/btn-menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.login-btn {
+  position: absolute;
+  top: 40px;
+  right: 40px;   /* 👈 substitui o left 1740 do Figma */
+
+  width: 140px;
+  height: 40px;
+
+  background-image: url("/buttons/btn-entrar.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 200px; /* header menor no mobile */
+  }
+
+  .header-container {
+    height: 100%;
+    padding: 24px 20px;
+    position: relative;
+  }
+
+  .logo {
+    top: 48px;         
+    left: 50%;         
+    transform: translateX(-50%);
+  }
+
+  .logo img {
+    width: 118.36px;    /* tamanho exato do Figma */
+    height: 120px;      /* mantém proporção visual */
+    object-fit: contain;
+  }
+
+  .menu-btn,
+  .login-btn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    border-radius: 999px;
+    border: 2px solid #3F6F4E; 
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0;
+  }
+
+  .menu-btn {
+    background-image: url("/icons/menu.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+  }
+
+  .login-btn {
+    background-image: url("/icons/user.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+  }
+}
+

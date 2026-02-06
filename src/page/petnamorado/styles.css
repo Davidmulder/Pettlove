@@ -1,0 +1,112 @@
+.title-section h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 36px;     /* desktop */
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.title-section h1 {
+  color: var(--petlove-orange);
+}
+
+.title-section h1 span {
+  color: var(--petlove-green);
+}
+
+/* subtítulo */
+.title-section p {
+  font-size: 14px;
+  color: #6f6f6f;
+}
+
+
+.pets-page {
+  max-width: 1840px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.title-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* GRID (desktop) - 3 casais por linha */
+.pets-grid {
+ display: grid;
+ 
+  grid-template-columns: repeat(3, 380px);
+  justify-content: center;  
+  justify-items: center;
+  column-gap: 30px;          
+  row-gap: 36px;
+
+  margin-top: 40px;
+}
+
+/* BANNER */
+.ad-banner {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.ad-banner img {
+  width: 750px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* BOTÃO */
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 80px;
+}
+
+.load-more-btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.load-more-btn img {
+  height: 44px; /* ajuste fino */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .title-section h1 {
+    font-size: 24px;
+  }
+
+  .title-section p {
+    font-size: 13px;
+  }
+  .pets-page {
+    padding: 0 16px;
+  }
+
+  .title-section {
+    margin: 24px 0;
+  }
+
+  .pets-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+    column-gap: 0;
+  }
+
+  .ad-banner img {
+    width: 100%;
+    height: auto;
+  }
+
+  .load-more-btn img {
+    height: 40px;
+  }
+}

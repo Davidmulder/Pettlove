@@ -1,0 +1,40 @@
+.pet-couple{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* área que controla as imagens */
+.pet-couple-photos{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 12px;         
+}
+
+/* pets 180x180 */
+.pet-photo{
+  width:180px;
+  height:180px;
+  border-radius:999px;
+  object-fit:cover;
+}
+
+/* coração 60x60 centralizado entre os dois */
+.pet-heart{
+  position:absolute;
+  width:60px;
+  height:60px;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  pointer-events:none;
+}
+
+.pet-couple-name{
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color:#2f4f3b;
+}

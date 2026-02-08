@@ -43,7 +43,7 @@ export function PetsNamorando() {
   const secondList = couples.slice(6)    // depois do banner
   return (
       <>
-      <Header />
+     
 
       <motion.main
         className="pets-page"
@@ -97,7 +97,7 @@ export function PetsNamorando() {
         </div>
       </motion.main>
 
-      <Footer />
+      
     </>
   )
 }

@@ -1,0 +1,186 @@
+/* ================= BASE ================= */
+.como {
+  background: #fff;
+}
+
+/* ================= HERO ================= */
+.como-hero {
+  width: 100%;
+  height: 530px;              /* Figma desktop */
+  background: #F7F4EB;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+   margin-top: -60px;
+}
+
+.como-hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+  transform: translateY(-20px);
+}
+
+/* texto pequeno */
+.como-mini {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #8B8B8B;
+  margin-bottom: 12px;
+}
+
+/* título desktop */
+.como-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #556F4D;
+  margin: 0 0 24px;
+}
+
+/* botão */
+.como-cta {
+  border: 0;
+  background: #F2B705;
+  color: #556F4D;
+  border-radius: 999px;
+  height: 44px;
+  padding: 0 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ================= VISIBILIDADE TEXTO ================= */
+.only-mobile {
+  display: none;
+}
+
+.only-desktop {
+  display: inline;
+}
+
+/* ================= STEPS ================= */
+.como-steps {
+  background: #fff;
+  padding: 80px 24px 120px;
+}
+
+.como-step {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.como-step.reverse {
+  flex-direction: row-reverse;
+}
+
+/* imagem */
+.step-media {
+  width: 520px;
+  flex: 0 0 520px;
+}
+
+.step-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* texto */
+.step-content {
+  max-width: 420px;
+}
+
+.step-icon {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.step-title {
+  margin: 0 0 10px;
+  color: #556F4D;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.step-title span {
+  color: #F2B705;
+}
+
+.step-text {
+  margin: 0;
+  color: #7A7A7A;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* linhas */
+.como-line {
+  display: block;
+  margin: 32px auto;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+
+  /* HERO MOBILE — COLADO NO TOPO */
+  .como-hero {
+    height: auto;
+    min-height: 520px;
+
+    padding-top: 220px;   /* espaço da logo */
+    padding-bottom: 32px;
+    margin-top: -220px;
+
+
+    background: #F7F4EB;
+  }
+
+  .como-hero-content {
+    max-width: 320px;
+    padding: 0 16px;
+  }
+
+  .como-hero h1 {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .only-desktop {
+    display: none;
+  }
+
+  .only-mobile {
+    display: block;
+    text-align: center;
+  }
+
+  /* STEPS MOBILE */
+  .como-step,
+  .como-step.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .step-media {
+    width: 100%;
+    max-width: 360px;
+    flex: none;
+  }
+
+  .step-content {
+    max-width: 360px;
+  }
+
+  .como-line {
+    width: 160px;
+    margin: 18px auto 22px;
+  }
+}

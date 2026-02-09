@@ -249,47 +249,64 @@
 
 /* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
+
+  /* proteção total contra overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .footer,
+  .footer * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .footer-inner {
     padding: 44px 16px 24px;
   }
 
+  /* remove grid fixo */
+  .footer-grid,
+  .footer-top {
+    display: block;
+    width: 100%;
+  }
+
+  /* esconde logo */
   .footer-brand {
     display: none;
   }
 
-  .footer-top {
-    grid-template-columns: 1fr;
-    margin-bottom: 18px;
-  }
-
- 
+  /* newsletter central */
   .footer-news {
-    align-items: center !important;
-    text-align: center !important;
-    transform: none !important;
+    align-items: center;
+    text-align: center;
     width: 100%;
   }
 
-  .footer-news h3 {
-    font-size: 18px;       
-    font-weight: 700;
-    margin: 0 0 10px;
-  }
-
   .footer-form {
+    width: 100%;
     justify-content: center;
   }
 
   .footer-input-group {
-    width: min(340px, 92vw); 
+    width: 100%;
+    max-width: 340px;
+    min-width: 0;
     margin: 0 auto;
   }
 
-  /* redes centralizadas no mobile */
+  .footer-input-group input {
+    min-width: 0;
+  }
+
+  /* social mobile */
   .footer-social {
-    justify-content: center !important;
+    width: 100%;
+    justify-content: center;
     margin-top: 18px;
-    gap: 22px; 
+    gap: 22px;
+    flex-wrap: wrap;
   }
 
   .footer-social a {
@@ -302,7 +319,7 @@
     height: 22px;
   }
 
-  /* esconde colunas e políticas no mobile */
+  /* esconde blocos desktop */
   .footer-middle,
   .footer-bottom,
   .footer-bottom-bar {
@@ -323,7 +340,7 @@
   }
 
   .footer-clickweb-mobile {
-    margin: 0 0 14px;
+    margin-bottom: 14px;
     font-style: italic;
     font-weight: 700;
   }
@@ -338,11 +355,5 @@
     margin: 0 auto 10px;
     border: none;
     background: transparent;
-    cursor: pointer;
-  }
-
-  .footer-arrow-mobile img {
-    width: 24px;
-    height: 24px;
   }
 }

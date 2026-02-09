@@ -53,7 +53,7 @@
 .login-btn {
   position: absolute;
   top: 40px;
-  right: 40px;   /* 👈 substitui o left 1740 do Figma */
+  right: 40px;   
 
   width: 140px;
   height: 40px;
@@ -82,8 +82,8 @@
 /* Drawer / dropdown do menu */
 .menu-drawer{
   position: fixed;
-  top: 92px;          /* ajuste conforme altura do header */
-  left: 40px;         /* igual ao menu no figma (left 40) */
+  top: 92px;         
+  left: 40px;         
   width: 260px;
   background: #fff;
   border-radius: 14px;
@@ -136,8 +136,8 @@
   }
 
   .logo img {
-    width: 118.36px;    /* tamanho exato do Figma */
-    height: 120px;      /* mantém proporção visual */
+    width: 118.36px;   
+    height: 120px;      
     object-fit: contain;
   }
 
@@ -176,7 +176,7 @@
     left: 16px;
     right: 16px;
     width: auto;
-    top: 110px; /* fica abaixo do topo (ajuste fino depois) */
+    top: 110px; 
   }
 }
 

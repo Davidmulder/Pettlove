@@ -1,7 +1,7 @@
 .title-section h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 36px;     /* desktop */
+  font-size: 36px;    
   line-height: 1.2;
   margin-bottom: 8px;
 }
@@ -74,7 +74,7 @@
 }
 
 .load-more-btn img {
-  height: 44px; /* ajuste fino */
+  height: 44px; 
 }
 
 /* MOBILE */

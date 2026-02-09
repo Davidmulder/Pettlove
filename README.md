@@ -1,16 +1,120 @@
-# React + Vite
+### 🐾 Pett Love – Front-end React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto front-end desenvolvido em React como parte de um teste técnico, com foco em layout fiel ao Figma, responsividade, animações, componentização e navegação entre páginas.
 
-Currently, two official plugins are available:
+O objetivo é demonstrar domínio de React moderno, organização de código e atenção a detalhes de UI/UX.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🎯 Funcionalidades
+```sh
+🏠 Página Home (Pets Namorando)
 
-## React Compiler
+ℹ️ Página "Como Funciona"
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔁 Navegação entre páginas com React Router
 
-## Expanding the ESLint configuration
+🎬 Animações suaves com Framer Motion
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📱 Layout totalmente responsivo (desktop e mobile)
+
+🎨 Design fiel ao Figma
+
+🧩 Componentes reutilizáveis (Header, Footer, Sections)
+
+🚀 Tecnologias Utilizadas
+
+React 18
+
+Vite
+
+React Router DOM
+
+Framer Motion
+
+CSS puro (layout customizado baseado no Figma)
+
+JavaScript (ES6+)
+```
+### 📂 Estrutura do Projeto
+```sh
+src/
+├── assets/
+│   └── images/        # imagens, ícones e linhas do layout
+│
+├── components/
+│   ├── header/
+│   └── footer/
+│
+├── layout/
+│   └── MainLayout.jsx # layout base com Header + Footer
+│
+├── page/
+│   ├── petnamorado/   # página Home
+│   └── comofunciona/  # página Como Funciona
+│
+├── App.jsx            # configuração de rotas
+├── main.jsx
+└── styles/
+```
+### 🌐 Rotas da Aplicação
+Rota	Descrição
+/	Página inicial – Pets Namorando
+/como-funciona	Página explicativa com etapas
+
+As rotas são controladas via React Router DOM, com layout compartilhado usando <Outlet />.
+
+### 🎬 Animações
+
+As animações foram implementadas com Framer Motion, incluindo:
+
+Fade + slide ao entrar na tela
+
+Animações suaves nas seções
+
+Melhor experiência visual sem impacto de performance
+
+### 📱 Responsividade
+
+Layout adaptado para desktop e mobile
+
+Breakpoints customizados conforme o Figma
+
+Elementos específicos exibidos apenas no mobile ou desktop (only-mobile / only-desktop)
+
+### 🎨 Design
+
+Layout baseado integralmente no Figma fornecido
+
+Alinhamentos, espaçamentos e tipografia ajustados manualmente
+
+Uso de imagens e ícones conforme especificação do design
+
+▶️ Como Executar o Projeto
+1️⃣ Clonar o repositório
+git clone https://github.com/seu-usuario/pett-love-react.git
+cd pett-love-react
+
+2️⃣ Instalar dependências
+npm install
+
+3️⃣ Rodar o projeto
+npm run dev
+
+
+O projeto estará disponível em:
+
+http://localhost:5173
+
+### 🧠 Boas Práticas Aplicadas
+
+✔️ Componentização clara
+✔️ Separação de layout e páginas
+✔️ Rotas bem definidas
+✔️ Código limpo e organizado
+✔️ CSS desacoplado por página/componente
+✔️ Sem dependência de frameworks de UI prontos (controle total do layout)
+
+### 👨‍💻 Autor
+
+David Orion
+Desenvolvedor Full Stack
+PHP | Laravel | React | JavaScript | APIs REST

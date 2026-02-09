@@ -6,22 +6,14 @@ O objetivo é demonstrar domínio de React moderno, organização de código e a
 
 ### 🎯 Funcionalidades
 ```sh
-🏠 Página Home (Pets Namorando)
-
-ℹ️ Página "Como Funciona"
-
-🔁 Navegação entre páginas com React Router
-
-🎬 Animações suaves com Framer Motion
-
-📱 Layout totalmente responsivo (desktop e mobile)
-
-🎨 Design fiel ao Figma
-
-🧩 Componentes reutilizáveis (Header, Footer, Sections)
-
-🚀 Tecnologias Utilizadas
-
+- 🏠 **Página Home** (Pets Namorando)
+- ℹ️ **Página “Como Funciona”**
+- 🧩 Componentes reutilizáveis (**Header**, **Footer**, cards e sections)
+- 🔁 Rotas com **React Router DOM**
+- 🎬 Animações suaves com **Framer Motion**
+- 📱 Layout responsivo (desktop e mobile)
+- 🐶 **Listagem dinâmica de casais de pets via JSON (mock de dados)** 
+  (src/assets/data/petCouples.json)
 React 18
 
 Vite
@@ -38,22 +30,26 @@ JavaScript (ES6+)
 ```sh
 src/
 ├── assets/
-│   └── images/        # imagens, ícones e linhas do layout
+│   ├── data/
+│   │   └── petCouples.json     # dados mockados (casais de pets)
+│   └── images/
+│       └── pets/              # imagens e elementos visuais do layout
 │
 ├── components/
-│   ├── header/
-│   └── footer/
+│   ├── heads/                 # Header
+│   ├── footer/                # Footer
+│   └── PetCoupleCard/         # Card do casal de pets
 │
 ├── layout/
-│   └── MainLayout.jsx # layout base com Header + Footer
+│   └── MainLayout.jsx         # layout base com Header + Footer
 │
-├── page/
-│   ├── petnamorado/   # página Home
-│   └── comofunciona/  # página Como Funciona
+├── pages/
+│   ├── petnamorado/           # Home
+│   └── comofunciona/          # Como Funciona
 │
-├── App.jsx            # configuração de rotas
-├── main.jsx
-└── styles/
+├── App.jsx                    # rotas
+└── main.jsx
+
 ```
 ### 🌐 Rotas da Aplicação
 Rota	Descrição
@@ -112,6 +108,7 @@ http://localhost:5173
 ✔️ Código limpo e organizado
 ✔️ CSS desacoplado por página/componente
 ✔️ Sem dependência de frameworks de UI prontos (controle total do layout)
+✔️ Mock de dados via JSON (pronto para evoluir para API real)
 ```
 ### 👨‍💻 Autor
 

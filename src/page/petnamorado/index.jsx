@@ -1,7 +1,7 @@
 import { Header } from '../../components/heads'
 
 import { Footer } from '../../components/footer'
-import {PetCoupleCard} from '../../components/PetCoupleCard'
+import {PetCoupleCard} from '../../components/PetCoupleCard' // aonde esta json
 import { petImages } from '../../assets/images/pets'  // mapeamento das imagens
 import { motion } from 'framer-motion'
 import rawCouplesData from '../../assets/data/petCouples.json'
@@ -28,7 +28,7 @@ const itemVariants = {
 }
 
 export function PetsNamorando() {
-  // ✅ mapeia e injeta as imagens usando imgKey
+ 
   const couples = rawCouplesData.map((c) => ({
     ...c,
     pet1: { ...c.pet1, image: petImages?.[c.pet1?.imgKey] },

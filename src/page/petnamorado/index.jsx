@@ -1,9 +1,10 @@
 import { Header } from '../../components/heads'
-import { useEffect, useMemo, useState } from 'react'
+
 import { Footer } from '../../components/footer'
 import {PetCoupleCard} from '../../components/PetCoupleCard'
 import { petImages } from '../../assets/images/pets'  // mapeamento das imagens
 import { motion } from 'framer-motion'
+import rawCouplesData from '../../assets/data/petCouples.json'
 
 import banner from '../../assets/images/pets/banner.png'
 import btnCarregar from '../../assets/images/pets/botaomeio.png'
@@ -12,10 +13,7 @@ const gridVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
   },
 }
 
@@ -30,45 +28,12 @@ const itemVariants = {
 }
 
 export function PetsNamorando() {
-  const [rawCouples, setRawCouples] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState('')
-
-  useEffect(() => {
-    let isMounted = true
-
-    async function loadCouples() {
-      try {
-        setLoading(true)
-        setError('')
-
-        const res = await fetch('/data/petCouples.json', { cache: 'no-store' })
-        if (!res.ok) throw new Error(`Erro ao buscar JSON: ${res.status}`)
-
-        const data = await res.json()
-        if (isMounted) setRawCouples(Array.isArray(data) ? data : [])
-      } catch (err) {
-        if (isMounted) setError(err?.message || 'Falha ao carregar os pets.')
-      } finally {
-        if (isMounted) setLoading(false)
-      }
-    }
-
-    loadCouples()
-
-    return () => {
-      isMounted = false
-    }
-  }, [])
-
-  // Mapeia as imagens pelo imgKey do JSON
-  const couples = useMemo(() => {
-    return rawCouples.map((c) => ({
-      ...c,
-      pet1: { ...c.pet1, image: petImages?.[c.pet1?.imgKey] },
-      pet2: { ...c.pet2, image: petImages?.[c.pet2?.imgKey] },
-    }))
-  }, [rawCouples])
+  // ✅ mapeia e injeta as imagens usando imgKey
+  const couples = rawCouplesData.map((c) => ({
+    ...c,
+    pet1: { ...c.pet1, image: petImages?.[c.pet1?.imgKey] },
+    pet2: { ...c.pet2, image: petImages?.[c.pet2?.imgKey] },
+  }))
 
   const firstList = couples.slice(0, 6)
   const secondList = couples.slice(6)
@@ -90,56 +55,35 @@ export function PetsNamorando() {
           <p>Dois aute irure dolor in reprehenderit in voluptate</p>
         </section>
 
-        {/* Estados (loading / erro) */}
-        {loading && (
-          <div className="pets-status">
-            <p>Carregando pets...</p>
-          </div>
-        )}
+        {/* LISTA 1 */}
+        <motion.section className="pets-grid" variants={gridVariants} initial="hidden" animate="show">
+          {firstList.map((c) => (
+            <motion.div key={c.id} variants={itemVariants}>
+              <PetCoupleCard pet1={c.pet1} pet2={c.pet2} />
+            </motion.div>
+          ))}
+        </motion.section>
 
-        {!loading && error && (
-          <div className="pets-status">
-            <p>❌ {error}</p>
-            <p>
-              Dica: confira se <code>/public/data/petCouples.json</code> existe e se abre no navegador em{' '}
-              <code>/data/petCouples.json</code>.
-            </p>
-          </div>
-        )}
+        {/* BANNER */}
+        <div className="ad-banner">
+          <img src={banner} alt="Publicidade" />
+        </div>
 
-        {!loading && !error && (
-          <>
-            {/* LISTA 1 */}
-            <motion.section className="pets-grid" variants={gridVariants} initial="hidden" animate="show">
-              {firstList.map((c) => (
-                <motion.div key={c.id} variants={itemVariants}>
-                  <PetCoupleCard pet1={c.pet1} pet2={c.pet2} />
-                </motion.div>
-              ))}
-            </motion.section>
+        {/* LISTA 2 */}
+        <motion.section className="pets-grid" variants={gridVariants} initial="hidden" animate="show">
+          {secondList.map((c) => (
+            <motion.div key={c.id} variants={itemVariants}>
+              <PetCoupleCard pet1={c.pet1} pet2={c.pet2} />
+            </motion.div>
+          ))}
+        </motion.section>
 
-            {/* BANNER */}
-            <div className="ad-banner">
-              <img src={banner} alt="Publicidade" />
-            </div>
-
-            {/* LISTA 2 */}
-            <motion.section className="pets-grid" variants={gridVariants} initial="hidden" animate="show">
-              {secondList.map((c) => (
-                <motion.div key={c.id} variants={itemVariants}>
-                  <PetCoupleCard pet1={c.pet1} pet2={c.pet2} />
-                </motion.div>
-              ))}
-            </motion.section>
-
-            {/* BOTÃO (imagem) */}
-            <div className="load-more">
-              <button className="load-more-btn" type="button">
-                <img src={btnCarregar} alt="Carregar mais antigos" />
-              </button>
-            </div>
-          </>
-        )}
+        {/* BOTÃO (imagem) */}
+        <div className="load-more">
+          <button className="load-more-btn" type="button">
+            <img src={btnCarregar} alt="Carregar mais antigos" />
+          </button>
+        </div>
       </motion.main>
 
       

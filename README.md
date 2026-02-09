@@ -105,14 +105,14 @@ O projeto estará disponível em:
 http://localhost:5173
 
 ### 🧠 Boas Práticas Aplicadas
-
+```sh
 ✔️ Componentização clara
 ✔️ Separação de layout e páginas
 ✔️ Rotas bem definidas
 ✔️ Código limpo e organizado
 ✔️ CSS desacoplado por página/componente
 ✔️ Sem dependência de frameworks de UI prontos (controle total do layout)
-
+```
 ### 👨‍💻 Autor
 
 David Orion

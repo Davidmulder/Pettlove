@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainLayout } from "./layout/MainLayout";
 import { ComoFunciona } from "./page/comofunciona";
 
-// Estou colocando a pagina Petsnamorando com principal
+
 function App() { 
 
   return (
